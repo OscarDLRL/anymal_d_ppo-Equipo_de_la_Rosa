@@ -1,0 +1,31 @@
+project:
+  name: AIDL-PPO-ANYMAL_D
+  run_name: yaml_train
+
+device: auto
+
+training:
+  num_episodes: 15000
+  lr: 0.0003
+  gamma: 0.99
+  batch_size: 128
+  clip_param: 0.2
+  ppo_epoch: 10
+  replay_size: 4096
+  c1: 0.5
+  c2: 0.005
+  max_grad_norm: 0.5
+  log_interval: 50
+
+checkpointing:
+  checkpoint_freq: 0
+  save_best_only: true
+
+rendering:
+  live: false
+  render_on_checkpoint: true
+  fall_threshold: 0.35
+
+output:
+  save_dir: pretrained_models/anymal_d
+  video_dir: pretrained_models/anymal_d/videos
